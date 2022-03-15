@@ -38,5 +38,4 @@ nest new project-name
 
 >John Ahn 님의 유튜브 영상을 보고 정리한 내용입니다.  
 문시 삭제 하겠습니다.  
-  
 https://www.youtube.com/watch?v=3JminDpCJNE&list=WL&index=3
