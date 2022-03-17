@@ -1,0 +1,31 @@
+Sub copyCell()
+
+    ' 셀 선택 및 복사
+    ActiveSheet.Range("A270674:M270694").Select
+    ActiveSheet.Range("A270674:M270694").Copy
+    
+    ' 입력받은 횟수만큼 반복하여 복사
+    ' 해당월의 마지막일까지
+    Dim i, toDate As Long
+    toDate = 7
+    
+    For i = 1 To toDate - 1
+        
+        ' 복사된 셀 시작 로우
+        Dim startRow As Long
+        startRow = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row + 1
+        
+        ' 붙여넣기
+        Range("A" & startRow).PasteSpecial
+        
+        ' 복사된 셀 마지막 로우
+        Dim endRow As Long
+        endRow = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row
+        
+        ' 날짜 + 1
+        Range(Cells(startRow, 2), Cells(endRow, 2)).Value = Cells(endRow, 2).Value + i
+        
+        
+    Next i
+    
+End Sub
