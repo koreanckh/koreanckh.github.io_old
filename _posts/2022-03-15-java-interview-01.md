@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "자바 개발자 면접 인터뷰 정리"
+title: "자바 개발자 면접 질문 정리"
 # subtitle: Each post also has a subtitle
 categories: interview
 # tags: [test]
