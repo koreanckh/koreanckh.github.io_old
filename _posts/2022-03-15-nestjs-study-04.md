@@ -9,7 +9,7 @@ categories: NestJS
 ## 1. 이미지 삽입 테스트
 그림 테스트  
 <center>
-    <img src="/assets/images/attached/testImg.png">
+    <img src="/assets/images/post/nestjs/testImg.png">
 </center>
 
 >John Ahn 님의 유튜브 영상을 보고 정리한 내용입니다.  
