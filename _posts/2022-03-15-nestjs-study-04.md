@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[NestJS 정리] 4. NestJS의 기본적인 로직 흐름."
+title: "[NestJS 정리] 4. wNestJS의 기본적인 로직 흐름."
 # subtitle: Each post also has a subtitle
 categories: NestJS
 # tags: [test]
