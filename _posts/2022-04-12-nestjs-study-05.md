@@ -278,3 +278,29 @@ export class SupportController {
 ```
 
 라우트 패스를 파라미터로 사용하는 것 처럼 `:`(콜론)을 사용하여 호스트 네이밍에 따른 처리가 가능하다.
+
+### (10) 페이로드 다루기
+POST, PUT, PATCH 요청을 보낼 떄는 필요한 데이터를 같이 보내게 되는데 이 데이터들을 페이로드라고 한다. NestJS에서는 이런 데이터들을 편하게 다룰 수 있도록 DTO를 만들어 컨트롤 할 수 있다.
+```typescript
+// "nest g resource users" 명령어를 통해 자동으로 만들어진 DTO 활용
+export class CreateUserDto {
+  name : string;
+  age : number;
+}
+```
+
+```typescript
+@Controller('users')
+export class UsersController {
+  constructor(private readonly usersService: UsersService) {}
+
+  @Post()
+  create(@Body() createUserDto: CreateUserDto) {
+    return this.usersService.create(createUserDto);
+  }
+
+}
+```
+<br><br><br>
+>위키독스에 올라온 "[NestJS로 배우는 백엔드 프로그래밍](https://wikidocs.net/book/7059)" 책을 보며 공부한 내용을 정리하였습니다.  
+문제시 삭제 하겠습니다.
