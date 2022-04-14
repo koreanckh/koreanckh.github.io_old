@@ -206,7 +206,7 @@ getBoard(@Param("id") id: number
 return `id : ${id} , category : ${category} , number : ${number}`;
 }
 ```
-`@Get(":id/board/:category/:number")`세팅에 보면 콜론`:`을 사용하여 라우트 파라미터를 전달 받을수 있다. 예를들어 `http://localhost:3000/1234/board/IT/17`라고 요청이 온다면 `id : 1234 , category : IT , number : 17`로 매핑된다.  
+`@Get(":id/board/:category/:number")`세팅에 보면 `:`(콜론)을 사용하여 라우트 파라미터를 전달 받을수 있다. 예를들어 `http://localhost:3000/1234/board/IT/17`라고 요청이 온다면 `id : 1234 , category : IT , number : 17`로 매핑된다.  
 
 <br>
 
@@ -257,3 +257,24 @@ export class SupportController {
   }
 }
 ```
+
+> 로컬에서 서버를 띄워 테스트 했을 때 *.localhost로 동작을 하기 위해서는 host파일을 수정해주어야 한다.  
+/ets/hosts 에 아래 내용을 추가해주자.  
+
+```
+127.0.0.1 api.localhost  
+127.0.0.1 v1.api.localhost
+```
+
+#### d. 호스트 네임에 따른 처리
+```typescript
+@Controller({host: ':type.support.localhost'})
+export class SupportController {
+  @Get()
+  help(@HostParam('type') type : string) : string {
+    return `Can I Help You? about ${type}`;
+  }
+}
+```
+
+라우트 패스를 파라미터로 사용하는 것 처럼 `:`(콜론)을 사용하여 호스트 네이밍에 따른 처리가 가능하다.
